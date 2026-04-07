@@ -20,7 +20,6 @@ class BiometricsService {
         ),
       );
     } catch (e) {
-      print('Biometric authentication error: $e');
       return false;
     }
   }
