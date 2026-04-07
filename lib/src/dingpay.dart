@@ -101,7 +101,9 @@ class DingPay {
                 Navigator.pop(context);
                 if (data['archived'] == true) {
                   SessionService.clearSession();
-                  options.onFailure?.call('Session expired. Please try again.');
+                  options.onFailure?.call(
+                    data['message'] ?? 'Session expired. Please try again.',
+                  );
                 } else {
                   options.onFailure?.call(data['message'] ?? 'Payment error');
                 }
@@ -118,7 +120,9 @@ class DingPay {
                   options.onSuccess?.call();
                 } else if (data['status'] == 'archived') {
                   SessionService.clearSession();
-                  options.onFailure?.call('Session expired. Please try again.');
+                  options.onFailure?.call(
+                    data['message'] ?? 'Session expired. Please try again.',
+                  );
                 } else {
                   options.onFailure?.call(data['message'] ?? 'Payment failed');
                 }
