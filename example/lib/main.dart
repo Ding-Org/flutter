@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const MyApp());
 
 const config = DingPayConfig(
-  apiKey: '-Oh0NXXHUamk8V7Iv9nr',
+  apiKey: 'test_api_key',
   callbackScheme: 'com.dingpaytestapp.app',
 );
 
